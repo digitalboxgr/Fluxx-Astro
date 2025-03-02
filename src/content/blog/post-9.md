@@ -2,7 +2,7 @@
 title: "What are Figma's AI features based on?"
 date: "Fri, 28 Febraury 2025"
 description: "As AI democratizes product development, design will be the differentiator."
-featuredImage: "/images/pic11.jpg"
+featuredImage: "/images/pic11.webp"
 ---
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit risus, pretium iaculis auctor morbi blandit dui purus mollis, cursus fusce sociosqu libero interdum class porttitor. Metus malesuada nibh mauris tristique erat eu imperdiet consequat iaculis lacus suspendisse elementum, nulla vehicula cras praesent eget purus porttitor egestas orci in. Venenatis quis mus luctus consequat phasellus porta congue parturient taciti condimentum elementum pellentesque dis per, feugiat aenean neque litora penatibus torquent integer diam est sagittis aliquet ut.

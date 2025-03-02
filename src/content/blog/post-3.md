@@ -2,7 +2,7 @@
 title: "Top Blogs Sites You Must Know As A Developer"
 date: "Fri, 28 Febraury 2025"
 description: "The storytelling will keep you hooked and you will learn “what not to do” in a humorous & engaging manner."
-featuredImage: "/images/pic03.jpg"
+featuredImage: "/images/pic03.webp"
 ---
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit risus, pretium iaculis auctor morbi blandit dui purus mollis, cursus fusce sociosqu libero interdum class porttitor. Metus malesuada nibh mauris tristique erat eu imperdiet consequat iaculis lacus suspendisse elementum, nulla vehicula cras praesent eget purus porttitor egestas orci in. Venenatis quis mus luctus consequat phasellus porta congue parturient taciti condimentum elementum pellentesque dis per, feugiat aenean neque litora penatibus torquent integer diam est sagittis aliquet ut.

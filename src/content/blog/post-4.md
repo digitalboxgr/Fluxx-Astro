@@ -2,7 +2,7 @@
 title: "Why I don't miss React"
 date: "Fri, 28 Febraury 2025"
 description: "Ranked by machines, curated by humans, updated hourly."
-featuredImage: "/images/pic04.jpg"
+featuredImage: "/images/pic04.webp"
 ---
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit risus, pretium iaculis auctor morbi blandit dui purus mollis, cursus fusce sociosqu libero interdum class porttitor. Metus malesuada nibh mauris tristique erat eu imperdiet consequat iaculis lacus suspendisse elementum, nulla vehicula cras praesent eget purus porttitor egestas orci in. Venenatis quis mus luctus consequat phasellus porta congue parturient taciti condimentum elementum pellentesque dis per, feugiat aenean neque litora penatibus torquent integer diam est sagittis aliquet ut.
