@@ -23,6 +23,9 @@ export async function getStaticPaths({ paginate }) {
 // Get the data from Astro.props
 const { page } = Astro.props;
 
+// Create a dynamic meta description for this page
+const metaDescription = `Explore our articles - Page ${page.currentPage} of ${page.lastPage}. Fluxx by Digitalbox - your source for digital content.`;
+
 // Generate page numbers without using JSX in the logic
 function generatePaginationItems(currentPage, totalPages) {
   const items = [];

@@ -1,6 +1,15 @@
 ---
-// Accept props, with a default title if none is provided
-const { title = "Fluxx by Digitalbox" } = Astro.props;
+// Add description to the props
+interface Props {
+  title: string;
+  description?: string; // Optional custom description
+}
+
+// Destructure the props with a default description
+const { 
+  title, 
+  description = "Fluxx by Digitalbox - A modern blog and digital content platform." 
+} = Astro.props;
 
 import Header from '../../src/components/Header.astro';
 import Footer from '../../src/components/Footer.astro';
@@ -13,6 +22,22 @@ import Footer from '../../src/components/Footer.astro';
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Meta description -->
+		<meta name="description" content={description}>
+  
+		<!-- Open Graph / Facebook meta tags -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content={Astro.url}>
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content={description}>
+		
+		<!-- Twitter meta tags -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content={Astro.url}>
+		<meta property="twitter:title" content={title}>
+		<meta property="twitter:description" content={description}>
+		
+		<!-- Your existing CSS links -->
 		<link rel="stylesheet" href="/assets/css/main.min.css" />
 		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 	</head>

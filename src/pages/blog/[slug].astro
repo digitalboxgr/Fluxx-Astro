@@ -14,6 +14,9 @@ export async function getStaticPaths() {
 // Get the post data from the props
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+// Use the post's description as meta description, or create one from the content
+const metaDescription = entry.data.description || `Read "${entry.data.title}" - an article from Fluxx by Digitalbox.`;
 ---
 
 <MainLayout title={`${post.data.title} - Fluxx by Digitalbox`}>

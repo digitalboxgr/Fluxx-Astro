@@ -12,6 +12,11 @@ const featuredPost = sortedPosts[0];
 const regularPosts = sortedPosts.slice(1, 7); // Get the next 6 posts for display
 const totalPages = Math.ceil((sortedPosts.length - 1) / 6);
 
+// Create a dynamic meta description
+const metaDescription = featuredPost 
+  ? `Explore our latest articles including "${featuredPost.data.title}" and more. Fluxx by Digitalbox - your source for digital content.`
+  : "Discover the latest articles from Fluxx by Digitalbox - a modern blog and digital content platform.";
+
 // Generate page numbers without using JSX in the logic
 function generatePaginationItems(currentPage, totalPages) {
   const items = [];
