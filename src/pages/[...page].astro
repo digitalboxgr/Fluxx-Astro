@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
+import { Image } from 'astro:assets';
+
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection('blog');
   const sortedPosts = allPosts.sort((a, b) => {
@@ -88,7 +90,14 @@ description={metaDescription}>
             <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
           </header>
           <a href={`/blog/${post.slug}`} class="image fit">
-            <img src={post.data.featuredImage} alt={post.data.title} />
+            <Image 
+    src={post.data.featuredImage} 
+    alt={post.data.title}
+    width={604} 
+    height={369}
+    format="webp"
+    quality={80}
+  />
           </a>
           <p>{post.data.description}</p>
           <ul class="actions special">

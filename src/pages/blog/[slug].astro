@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
+import { Image } from 'astro:assets';
+
 // Generate paths for all blog posts
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog');
@@ -33,10 +35,17 @@ const metaDescription = post.data.description || `Read "${post.data.title}" - an
 			<h1>{post.data.title}</h1>
 			<p>{post.data.description}</p>
 		</header>
-		<div class="image main"><img 
+		<div class="image main">
+			<Image 
 			src={post.data.featuredImage} 
-			alt={post.data.title} 
-		  /></div>
+			alt={post.data.title}
+			width={1195} 
+			height={725}
+			format="webp"
+			quality={80}
+		  />
+
+		</div>
         <Content />
     </section>
 

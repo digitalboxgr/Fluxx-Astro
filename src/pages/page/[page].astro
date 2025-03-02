@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
+import { Image } from 'astro:assets';
+
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection('blog');
   const sortedPosts = allPosts.sort((a, b) => {
@@ -88,7 +90,14 @@ const paginationItems = generatePaginationItems(page.currentPage, page.lastPage)
           <p>{featuredPost.data.description}</p>
         </header>
         <a href={`/blog/${featuredPost.slug}`} class="image main">
-            <img src={featuredPost.data.featuredImage} alt={featuredPost.data.title} />
+          <Image 
+    src={featuredPost.data.featuredImage} 
+    alt={featuredPost.data.title}
+    width={1195} 
+    height={725}
+    format="webp"
+    quality={80}
+  />
         </a>
         <ul class="actions special">
           <li><a href={`/blog/${featuredPost.slug}`} class="button large">Full Story</a></li>
@@ -105,7 +114,14 @@ const paginationItems = generatePaginationItems(page.currentPage, page.lastPage)
             <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
           </header>
           <a href={`/blog/${post.slug}`} class="image fit">
-            <img src={post.data.featuredImage} alt={post.data.title} />
+            <Image 
+    src={post.data.featuredImage} 
+    alt={post.data.title}
+    width={604} 
+    height={369}
+    format="webp"
+    quality={80}
+  />
           </a>
           <p>{post.data.description}</p>
           <ul class="actions special">
