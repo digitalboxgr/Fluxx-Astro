@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url(fontawesome-custom.min.css);
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 html,body,div,span,applet,object,
@@ -3137,37 +3137,9 @@ input,select,textarea{
  padding:0 1.75rem;
  }
 
- .pagination .next:before,.pagination .previous:before{
- -moz-osx-font-smoothing:grayscale;
- -webkit-font-smoothing:antialiased;
- display:inline-block;
- font-style:normal;
- font-variant:normal;
- text-rendering:auto;
- line-height:1;
- text-transform:none !important;
- font-family:'Font Awesome 5 Free';
- font-weight:900;
- }
+ 
 
- .pagination .next:before,.pagination .previous:before{
- display:inline-block;
- color:inherit !important;
- line-height:inherit;
- }
-
- .pagination .previous:before{
- content:'\f104';
- margin-right:0.9375em;
- }
-
- .pagination .next:before{
- content:'\f105';
- float:right;
- margin-left:0.9375em;
- }
-
- @media screen and (max-width:980px){
+  @media screen and (max-width:980px){
 
  .pagination a,.pagination span{
  font-size:0.9rem;
