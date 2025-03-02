@@ -91,13 +91,16 @@ description={metaDescription}>
           </header>
           <a href={`/blog/${post.slug}`} class="image fit">
             <Image 
-    src={post.data.featuredImage} 
-    alt={post.data.title}
-    width={604} 
-    height={369}
-    format="webp"
-    quality={80}
-  />
+              src={post.data.featuredImage} 
+              alt={post.data.title}
+              widths={[300, 600]}
+              sizes="(max-width: 600px) 100vw, 600px"
+              width={604} 
+              height={369}
+              format="webp"
+              quality={80}
+              class="responsive-img"
+            />
           </a>
           <p>{post.data.description}</p>
           <ul class="actions special">
