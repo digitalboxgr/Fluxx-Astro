@@ -70,7 +70,8 @@ const paginationItems = generatePaginationItems(currentPage, totalPages);
 const hasNextPage = totalPages > 1;
 ---
 
-<Layout title="Home - Fluxx by Digitalbox">
+<Layout title="Home - Fluxx by Digitalbox"
+description={metaDescription}>
   <div id="main">
     <!-- Featured Post -->
     {featuredPost && (

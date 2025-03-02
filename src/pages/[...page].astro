@@ -76,7 +76,8 @@ function generatePaginationItems(currentPage, totalPages) {
 const paginationItems = generatePaginationItems(page.currentPage, page.lastPage);
 ---
 
-<Layout title="Blog - Page {page.currentPage} - Fluxx by Digitalbox">
+<Layout title={`Blog - Page ${page.currentPage} - Fluxx by Digitalbox`}
+description={metaDescription}>
   <div id="main">
     <!-- Regular Posts -->
     <section class="posts">

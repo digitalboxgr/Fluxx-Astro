@@ -16,10 +16,13 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 // Use the post's description as meta description, or create one from the content
-const metaDescription = entry.data.description || `Read "${entry.data.title}" - an article from Fluxx by Digitalbox.`;
+const metaDescription = post.data.description || `Read "${post.data.title}" - an article from Fluxx by Digitalbox.`;
 ---
 
-<MainLayout title={`${post.data.title} - Fluxx by Digitalbox`}>
+<MainLayout
+  title={`${post.data.title} - Fluxx by Digitalbox`}
+  description={metaDescription}
+>
 <!-- Main -->
 <div id="main">
 
