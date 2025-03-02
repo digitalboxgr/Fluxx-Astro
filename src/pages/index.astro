@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Directly fetch posts for the index page
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+const featuredPost = sortedPosts[0];
+const regularPosts = sortedPosts.slice(1, 7); // Get the next 6 posts for display
+const totalPages = Math.ceil((sortedPosts.length - 1) / 6);
+
+// Generate page numbers without using JSX in the logic
+function generatePaginationItems(currentPage, totalPages) {
+  const items = [];
+  
+  // First page
+  items.push({
+    type: 'page',
+    number: 1,
+    url: '/',
+    active: currentPage === 1
+  });
+  
+  // Ellipsis after first page if needed
+  if (currentPage > 3) {
+    items.push({ type: 'ellipsis' });
+  }
+  
+  // Pages around current page
+  for (let i = Math.max(2, currentPage - 1); i <= Math.min(totalPages - 1, currentPage + 1); i++) {
+    if (i !== 1 && i !== totalPages) {
+      items.push({
+        type: 'page',
+        number: i,
+        url: `/page/${i}`,
+        active: currentPage === i
+      });
+    }
+  }
+  
+  // Ellipsis before last page if needed
+  if (currentPage < totalPages - 2) {
+    items.push({ type: 'ellipsis' });
+  }
+  
+  // Last page (if more than one page exists)
+  if (totalPages > 1) {
+    items.push({
+      type: 'page',
+      number: totalPages,
+      url: `/page/${totalPages}`,
+      active: currentPage === totalPages
+    });
+  }
+  
+  return items;
+}
+
+// Current page is 1 for index
+const currentPage = 1;
+const paginationItems = generatePaginationItems(currentPage, totalPages);
+const hasNextPage = totalPages > 1;
+---
+
+<Layout title="Home - Fluxx by Digitalbox">
+  <div id="main">
+    <!-- Featured Post -->
+    {featuredPost && (
+      <article class="post featured">
+        <header class="major">
+          <span class="date">{featuredPost.data.date}</span>
+          <h2><a href={`/blog/${featuredPost.slug}`}>{featuredPost.data.title}</a></h2>
+          <p>{featuredPost.data.description}</p>
+        </header>
+        <a href={`/blog/${featuredPost.slug}`} class="image main">
+            <img src={featuredPost.data.featuredImage} alt={featuredPost.data.title} />
+        </a>
+        <ul class="actions special">
+          <li><a href={`/blog/${featuredPost.slug}`} class="button large">Full Story</a></li>
+        </ul>
+      </article>
+    )}
+
+    <!-- Regular Posts -->
+    <section class="posts">
+      {regularPosts.map((post) => (
+        <article>
+          <header>
+            <span class="date">{post.data.date}</span>
+            <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
+          </header>
+          <a href={`/blog/${post.slug}`} class="image fit">
+            <img src={post.data.featuredImage} alt={post.data.title} />
+          </a>
+          <p>{post.data.description}</p>
+          <ul class="actions special">
+            <li><a href={`/blog/${post.slug}`} class="button">Full Story</a></li>
+          </ul>
+        </article>
+      ))}
+    </section>
+
+    <!-- Pagination -->
+    <footer>
+      <div class="pagination">
+        {/* Always disabled on first page */}
+        <span class="previous disabled">Prev</span>
+        
+        {paginationItems.map(item => {
+          if (item.type === 'ellipsis') {
+            return <span class="extra">&hellip;</span>;
+          } else {
+            return (
+              <a href={item.url} class={`page ${item.active ? 'active' : ''}`}>
+                {item.number}
+              </a>
+            );
+          }
+        })}
+        
+        {hasNextPage ? (
+          <a href="/page/2" class="next">Next</a>
+        ) : (
+          <span class="next disabled">Next</span>
+        )}
+      </div>
+    </footer>
+  </div>
+</Layout>

@@ -1,0 +1,29 @@
+---
+// Accept props, with a default title if none is provided
+const { title = "Fluxx by Digitalbox" } = Astro.props;
+
+import Header from '../../src/components/Header.astro';
+import Footer from '../../src/components/Footer.astro';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>{title}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper" class="fade-in">
+			<Header />
+			
+		<slot />
+
+		<Footer />
+
+</body>
+</html>
