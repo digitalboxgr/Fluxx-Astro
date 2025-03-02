@@ -2,7 +2,7 @@
 
 A modern, fast website built with [Astro](https://astro.build), a powerful static site generator that delivers lightning-fast performance.
 
-🌐 **[View Demo](https://astrojs.digitalbox.site/fluxx/)** 
+🌐 **[View Demo](http://fluxx-astrojs.digitalbox.site/)** 
 
 ## 🚀 Features
 
