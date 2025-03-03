@@ -28,8 +28,8 @@ A modern, fast website built with [Astro](https://astro.build), a powerful stati
 
 1. Clone the repository
 ```bash
-git clone https://github.com/digitalboxgr/fluxx.git
-cd fluxx
+git clone https://github.com/digitalboxgr/Fluxx-Astro.git
+cd Fluxx-Astro
 ```
 
 2. Install dependencies
